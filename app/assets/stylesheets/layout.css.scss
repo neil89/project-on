@@ -1,0 +1,453 @@
+header
+{
+  text-align: center;
+}
+
+h1
+{
+  padding-bottom: 2%;
+}
+
+#login-header
+{
+  padding: 90px 0 100px 0;
+}
+
+.nav li
+{
+  cursor: pointer;
+}
+
+
+#circle
+{
+  height: 74px;
+  width: 68px;
+  border: 3px solid #333333;
+  border-radius: 36px;
+  background: #333333;
+  animation-name: setup-outer-circle;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in;
+  animation-delay: 1s;
+}
+
+#circle-hole
+{
+  height: 40px;
+  width: 28px;
+  border: 3px solid white;
+  background: white;
+  border-radius: 17px;
+  animation-name: setup-inner-circle;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in;
+  animation-delay: 1s;
+}
+
+#circle-hole-color
+{
+  height: 45px;
+  width: 45px;
+  border: 2px solid #FF7200;
+  border-radius: 45px;
+  position: absolute;
+  top: 22px;
+  left: 61px;
+  animation: orange-color-button 2s ease-in-out 6s,
+    orange-shine 0.5s ease-in-out 8s infinite alternate;
+  opacity: 0;
+}
+
+#dash
+{
+  width: 33px;
+  height: 12px;
+    //border: 2px solid #333333;
+  background: #333333;
+  animation-name: setup-dash;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+}
+
+#encloser
+{
+  margin-left: 4px;
+    //border: green solid 1px;
+  height: 84px;
+  animation-name: rotate-button-on;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 3.5s;
+}
+
+#encloser-dash
+{
+  width: 38px;
+    //border: red solid 1px;
+  margin-top: 32px;
+  margin-left: 0;
+  float: left;
+  position: relative;
+  z-index: 3;
+  animation-name: setup-encloser-dash;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-delay: 1s;
+}
+
+#encloser-circle
+{
+  margin-left: 47px;
+    //border: blue solid 1px;
+  margin-bottom: -4px;
+  height: 83px;
+  animation-name: setup-encloser-outer-circle;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in;
+  animation-delay: 1s;
+}
+
+#encloser-circle-hole
+{
+  margin-left: 67px;
+  margin-top: -62px;
+  float: left;
+    //border: 1px solid purple;
+  animation-name: setup-encloser-inner-circle;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in;
+  animation-delay: 1s;
+}
+
+@keyframes setup-outer-circle
+{
+  0%
+  {
+    height: 74px;
+    width: 68px;
+    border-radius: 36px;
+  }
+  100%
+  {
+    height: 72px;
+    width: 72px;
+    border-radius: 72px;
+  }
+}
+
+@keyframes setup-encloser-outer-circle
+{
+  0%
+  {
+    margin-bottom: -4px;
+    padding-top: 0;
+    height: 83px;
+  }
+  100%
+  {
+    padding-top: 7px;
+    margin-bottom: -6px;
+    height: 78px;
+  }
+}
+
+@keyframes setup-inner-circle
+{
+  0%
+  {
+    height: 44px;
+    width: 28px;
+    border-radius: 17px;
+  }
+  100%
+  {
+    height: 42px;
+    width: 42px;
+    border-radius: 42px;
+  }
+}
+
+@keyframes setup-encloser-inner-circle
+{
+  0%
+  {
+    margin-left: 67px;
+    margin-top: -62px;
+  }
+  100%
+  {
+    margin-left: 62px;
+    margin-top: -56.5px;
+  }
+}
+
+@keyframes setup-dash
+{
+  0%
+  {
+    width: 33px;
+  }
+  100%
+  {
+    width: 38px;
+  }
+}
+
+@keyframes setup-encloser-dash
+{
+  0%
+  {
+    margin-top: 32px;
+    margin-left: 0;
+  }
+  50%
+  {
+    margin-top: 40.5px;
+    margin-left: 0;
+  }
+  100%
+  {
+    margin-top: 40.5px;
+    margin-left: 36px;
+  }
+}
+
+@keyframes rotate-button-on
+{
+  0%
+  {
+    transform-origin: 87px 40px 81px 44px 0;
+    transform: rotate(0deg);
+  }
+  100%
+  {
+    transform-origin: 81px 44px 0;
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes orange-color-button
+{
+  0%
+  {
+    background: #FF7200;
+    opacity: 0;
+  }
+  10%
+  {
+    opacity: 1;
+  }
+  100%
+  {
+    background: #FF7200;
+    opacity: 1;
+  }
+}
+
+@keyframes orange-shine
+{
+  0%
+  {
+    box-shadow: 0 0 4px 1px #FF7200;
+    opacity: 1;
+  }
+  100%
+  {
+    box-shadow: 0 0 8px 4px #FF7200;
+    opacity: 1;
+  }
+}
+
+.rotated
+{
+  transform-origin: 81px 44px 0;
+  transform: rotate(90deg);
+}
+
+#login-title-onv2
+{
+  width: 132px;
+  display: inline-block;
+}
+
+.main-content
+{
+  width: 80%;
+  margin: 2% auto 0 auto;
+}
+
+
+.friends-list
+{
+  display: inline;
+  div
+  {
+    width: 150px;
+    padding: 40px;
+    text-align: center;
+    float: left;
+    img
+    {
+      width: 150px;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.info-tag-title
+{
+  font-weight: bold;
+  margin-left: 10px;
+  padding-top: 5px;
+}
+
+.info-tag
+{
+  margin-left: 20px;
+}
+
+.frame-box
+{
+  box-shadow: 0px 0px 8px 1px #383F56;
+  margin-bottom: 2%;
+  padding: 5px 5px 10px 5px;
+}
+
+.block-element
+{
+  clear: both;
+  display: block;
+  @extend span12;
+}
+
+.profile-image
+{
+  float: right;
+}
+
+.edit-profile-icon
+{
+  opacity: 0;
+}
+
+#profile-image-section
+{
+  float: right;
+  width: 215px;
+  position: relative;
+  img
+  {
+    padding-top: 10px;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+
+input.file 
+{
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  width: 200px;
+  height: 200px;
+  z-index: 2;
+  top: 40px;
+  left: 12px;
+}
+
+[class^="icon-"], [class*=" icon-"]
+{
+  margin-top: 3px;
+}
+
+.knowledge-list
+{
+  display: inline;
+  padding-right: 20px;
+}
+
+.profiles-list
+{
+  display: inline;
+  padding-right: 20px;
+}
+
+.list-bullets
+{
+  margin-top: 1px;
+  margin-right: 2px;
+}
+
+.icon-title
+{
+  margin-top: 5px;
+}
+
+.breadcrumb 
+{
+  li
+  {
+    cursor: pointer;
+  }
+}
+
+#login-form
+{
+  width: 30%;
+  margin: 0 auto;
+  display: block;
+  input
+  {
+    float: left;
+  }
+  label
+  {
+    width: 100px;
+    height: 20px;
+    padding-top: 5px;
+    float: left;
+  }
+  button
+  {
+    margin: 5% auto 0 40%;
+    width: 20%;
+  }
+}
+
+#new-project-form
+{
+  width: 80%;
+  margin: 0 auto;
+  label
+  {
+    width: 140px;
+    height: 20px;
+    padding-top: 5px;
+    float: left
+  }
+  .left-column
+  {
+    float: left;
+    width: 50%;
+  }
+  .right-column
+  {
+    float: right;
+    width: 50%;
+    textarea
+    {
+      height: 100px;
+    }
+  }
+  button
+  {
+    margin: 5% auto 0 35%;
+    width: 30%;
+  }
+}
+

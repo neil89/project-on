@@ -1,0 +1,39 @@
+<ul class="breadcrumb">
+  {{#linkTo "app.profile" tagName="li"}}
+    <a {{bindAttr href="view.href"}}>Perfil</a>
+    <span class="divider">/</span>
+  {{/linkTo}}
+  <li class="active">Mis proyectos</li>
+</ul>
+
+<h1>Mis proyectos</h1>
+
+<h4 class="block-element">Creados por mi</h4>
+<ul>
+  {{#each p in created}}
+    <li>
+      {{#linkTo 'projects.project' p}}
+        {{p.title}} <i class="icon-chevron-right"></i>
+      {{/linkTo}}
+    </li>
+  {{else}}
+    <li>Ninguno todavía</li>
+  {{/each}}
+</ul>
+
+{{#linkTo 'projects.new'}}
+  <button class='btn btn-primary'><i class="icon-plus button-icon"></i> Crear proyecto</button>
+{{/linkTo}}
+
+<h4 class="block-element">En los que participo</h4>
+<ul>
+  {{#each p in coworker}}
+  <li>
+    {{#linkTo 'projects.project' p}}
+      {{p.title}} <i class="icon-chevron-right"></i>
+    {{/linkTo}}
+  </li>
+  {{else}}
+    <li>Ninguno todavía</li>
+  {{/each}}
+</ul>

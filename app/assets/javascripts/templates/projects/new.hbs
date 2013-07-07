@@ -1,0 +1,50 @@
+<ul class="breadcrumb">
+  {{#linkTo "app.profile" tagName="li"}}
+    <a {{bindAttr href="view.href"}}>Perfil</a>
+    <span class="divider">/</span>
+  {{/linkTo}}
+  {{#linkTo "projects.index" tagName="li"}}
+    <a {{bindAttr href="view.href"}}>Mis proyectos</a>
+    <span class="divider">/</span>
+  {{/linkTo}}
+  <li class="active">Nuevo proyecto</li>
+</ul>
+
+
+<h1>Crear nuevo proyecto</h1>
+
+<form {{action createProject on="submit"}}>
+  <div id="new-project-form">
+    <div class="left-column">
+      <div>
+        <label>
+          Título del proyecto
+        </label>
+        {{view Ember.TextField valueBinding="projectTitle"}}
+      </div>
+        
+      <div>
+        <label>
+          Fecha de comienzo
+        </label>
+        {{view Ember.TextField valueBinding="startingDate" placeholder="dd/mm/aaaa"}}
+      </div>
+        
+      <div>
+        <label>
+          Fecha de finalización
+        </label>    
+        {{view Ember.TextField valueBinding="endingDate" placeholder="dd/mm/aaaa"}}
+      </div>
+    </div>
+      
+    <div class="right-column">
+      <label>
+        Descripción
+      </label>
+      {{view Ember.TextArea valueBinding="description"}}
+    </div>
+
+    <button type="submit">Crear proyecto</button>
+  </div>
+</form>

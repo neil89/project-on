@@ -1,0 +1,47 @@
+<header id="login-header">
+  <!--<span id="login-title-pre" class="login-title">Project</span>
+  <span id="login-title-on" class="login-title">-o</span>
+  <span id="login-title-post" class="login-title">n</span>
+  <br/><br/><br/>-->
+  <span id="login-title-pre" class="login-title">Project</span>
+  <span id="login-title-onv2" class="login-title">
+    <div id="encloser">
+      <div id="encloser-dash">
+        <div id="dash"></div>
+      </div>
+      <div id="encloser-circle">
+        <div id="circle"></div>
+      </div>
+      <div id="encloser-circle-hole">
+        <div id="circle-hole"></div>
+        <div id="circle-hole-color"></div>
+      </div>
+    </div>
+  </span>
+  <span id="login-title-post" class="login-title">n</span>
+</header>
+
+<!--
+<div class="dash-superimposed"></div>
+<div class="circle-superimposed"></div>
+-->
+
+{{#view App.LoginFormView}}
+  <div id="login-form">
+    <div>
+      <label>
+        Email:
+      </label>
+      {{view Ember.TextField valueBinding="view.username"}}
+    </div>
+    
+    <div>
+      <label>
+        Contraseña:
+      </label>
+      {{view Ember.TextField type="password" valueBinding="view.password"}}
+    </div>
+    
+    <button>Entrar</button>
+  </div>
+{{/view}}

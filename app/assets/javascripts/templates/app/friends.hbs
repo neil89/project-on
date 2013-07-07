@@ -1,0 +1,18 @@
+<h1>Amigos</h1>
+
+<h4>Tienes {{pluralizeFriends model}}</h4>
+
+{{#with model}}
+  <ul>
+    {{#each}}
+      <li class="friends-list">
+        <div>
+          {{#linkTo 'app.profile'}}
+            <img src="{{unbound iconUrl}}">
+            {{name}}
+          {{/linkTo}}
+        </div>
+      </li>
+    {{/each}}
+  <ul>
+{{/with}}

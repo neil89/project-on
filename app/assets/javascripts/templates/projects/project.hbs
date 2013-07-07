@@ -1,0 +1,15 @@
+<ul class="breadcrumb">
+  {{#linkTo "app.profile" tagName="li"}}
+    <a {{bindAttr href="view.href"}}>Perfil</a>
+    <span class="divider">/</span>
+  {{/linkTo}}
+  {{#linkTo "projects.index" tagName="li"}}
+    <a {{bindAttr href="view.href"}}>Mis proyectos</a>
+    <span class="divider">/</span>
+  {{/linkTo}}
+  <li class="active">{{title}}</li>
+</ul>
+
+<h1>{{title}}</h1>
+
+<h4 class="block-element">Proyecto creado por {{creator.name}} con descripcion {{description}}</h4>
