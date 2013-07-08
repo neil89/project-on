@@ -1,6 +1,8 @@
 <header class="navbar">
   <div class="navbar-inner">
-    <a class="brand" href="#">Project-on</a>
+    {{#linkTo "app.board" tagName="a" class="brand brand-title"}}
+      Project-on
+    {{/linkTo}}
     <ul class="nav">
       {{#linkTo "app.board" tagName="li"}}
         <a {{bindAttr href="view.href"}}>Tablón</a>
@@ -15,6 +17,20 @@
         <a {{bindAttr href="view.href"}}>Perfil</a>
       {{/linkTo}}
     </ul>
+
+    <div id="on-button-encloser" {{action "logOut" on="click"}} title="Haz clic para salir">
+      <div id="encloser-final" class="rotated">
+        <div id="encloser-dash-final">
+          <div id="dash-final"></div>
+        </div>
+        <div id="encloser-circle-final">
+          <div id="circle-final"></div>
+        </div>
+        <div id="encloser-circle-hole-final">
+          <div id="circle-hole-color-final"></div>
+        </div>
+      </div>
+    </div>
 
     <ul class="nav pull-right">
       <li class="dropdown">

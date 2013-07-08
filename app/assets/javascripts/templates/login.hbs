@@ -1,10 +1,6 @@
 <header id="login-header">
-  <!--<span id="login-title-pre" class="login-title">Project</span>
-  <span id="login-title-on" class="login-title">-o</span>
-  <span id="login-title-post" class="login-title">n</span>
-  <br/><br/><br/>-->
   <span id="login-title-pre" class="login-title">Project</span>
-  <span id="login-title-onv2" class="login-title">
+  <span id="login-title-on" class="login-title">
     <div id="encloser">
       <div id="encloser-dash">
         <div id="dash"></div>
@@ -21,28 +17,43 @@
   <span id="login-title-post" class="login-title">n</span>
 </header>
 
-<!--
-<div class="dash-superimposed"></div>
-<div class="circle-superimposed"></div>
--->
 
-{{#view App.LoginFormView}}
-  <div id="login-form">
-    <div>
-      <label>
-        Email:
-      </label>
-      {{view Ember.TextField valueBinding="view.username"}}
-      <img src="../app/assets/images/green_bulb_small.png"/>
+<div id="email-format-error" class="alert alert-error">
+  ¿Estás seguro de que eso es un email? ¡Revísalo!
+</div>
+
+<div id="email-unregistered-error" class="alert alert-error">
+  Ese email no está en el sistema, ¡regístrate antes de entrar!
+</div>
+
+<div id="pass-format-error" class="alert alert-error">
+  Con una contraseña tan corta tus proyectos no estarían seguros. Tu contraseña seguro que es más larga
+</div>
+
+<div id="pass-wrong-error" class="alert alert-error">
+  ¡Esa no es tu contraseña! Prueba otra vez
+</div>
+
+<div id="panel-login">
+  {{#view App.LoginFormView}}
+    <div id="login-form">
+      <div>
+        <label>
+          Email:
+        </label>
+        {{view Ember.TextField valueBinding="view.username" id="email-input"}}
+        <div id="email-bulb" class="off-bulb"></div>
+      </div>
+      
+      <div>
+        <label>
+          Contraseña:
+        </label>
+        {{view Ember.TextField type="password" valueBinding="view.password" id="pass-input"}}
+        <div id="pass-bulb" class="off-bulb"></div>
+      </div>
+      
+      <button>Entrar</button>
     </div>
-    
-    <div>
-      <label>
-        Contraseña:
-      </label>
-      {{view Ember.TextField type="password" valueBinding="view.password"}}
-    </div>
-    
-    <button>Entrar</button>
-  </div>
-{{/view}}
+  {{/view}}
+</div>

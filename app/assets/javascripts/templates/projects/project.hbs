@@ -12,8 +12,7 @@
 
 <h1>{{title}}</h1>
 
-{{debugger}}
-{{log record}}
+
 
 <!--
   <h4 class="block-element">Proyecto creado por {{creator.name}}</h4>
@@ -23,10 +22,14 @@
   <div class="info-tag-title">Creado por</div>
   <div class="info-tag">{{creator.name}}</div>
 
+{{debugger}}
+{{log model}}
+{{log model.coworker}}
+
   <div class="info-tag-title">Colaboradores</div>
   <ul>
-    {{#each cw in model.coworker}}
-      <li class="profiles-list"><i class="icon-screenshot list-bullets"></i> {{cw.name}}</li>
+    {{#each cw in model.coworkers}}
+      <li class="profiles-list"><i class="icon-screenshot list-bullets"></i> {{cw.name}} {{cwList}}</li>
     {{/each}}
   </ul>
 </section>

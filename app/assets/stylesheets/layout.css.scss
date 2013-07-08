@@ -15,14 +15,13 @@ ul
 
 #login-header
 {
-  padding: 90px 0 100px 0;
+  padding: 90px 0 60px 0;
 }
 
 .nav li
 {
   cursor: pointer;
 }
-
 
 #circle
 {
@@ -54,13 +53,14 @@ ul
 {
   height: 45px;
   width: 45px;
-  border: 2px solid #FF7200;
+  border: 2px solid #FF3232;
+  background: #FF6060;
   border-radius: 45px;
   position: absolute;
   top: 22px;
-  left: 61px;
-  animation: orange-color-button 2s ease-in-out 6s,
-    orange-shine 0.5s ease-in-out 8s infinite alternate;
+  left: 61px; 
+  animation: red-color-button 2s ease-in-out 6s,
+    red-shine 0.5s ease-in-out 8s infinite alternate;
   opacity: 0;
 }
 
@@ -91,8 +91,8 @@ ul
 {
   width: 38px;
     //border: red solid 1px;
-  margin-top: 32px;
-  margin-left: 0;
+  margin-top: 41.5px;
+  margin-left: 36px;
   float: left;
   position: relative;
   z-index: 3;
@@ -125,6 +125,76 @@ ul
   animation-timing-function: ease-in;
   animation-delay: 1s;
 }
+
+
+#encloser-final
+{
+  margin-left: -80px;
+  margin-top: -20px;
+  cursor: pointer;
+}
+
+#encloser-dash-final
+{
+  float: left;
+  position: relative;
+  z-index: 3;
+  width: 38px;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+#encloser-circle-final
+{
+  padding-top: 10.5px;
+  margin-bottom: -8px;
+  height: 78px;
+  margin-left: 49px;
+}
+
+#encloser-circle-hole-final
+{
+  margin-left: 62px;
+  margin-top: -56.5px;
+  float: left;
+}
+
+#circle-final
+{
+  border: 3px solid #333333;
+  background: #333333;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+}
+
+
+#circle-hole-color-final
+{
+  height: 39px;
+  width: 39px;
+  border: 2px solid #48D310;
+  background: #7DF74C;
+  border-radius: 39px;
+  position: absolute;
+  top: 22px;
+  left: 61px; 
+  animation: green-shine 0.5s ease-in-out infinite alternate;
+  &:hover
+  {
+    border: 2px solid #FF3232;
+    background: #FF6060;
+    animation: red-shine 0.5s ease-in-out infinite alternate;
+  }
+}
+
+#dash-final
+{
+  width: 34px;
+  height: 9px;
+  background: #333333;
+}
+
 
 @keyframes setup-outer-circle
 {
@@ -233,37 +303,70 @@ ul
   }
 }
 
-@keyframes orange-color-button
+@keyframes red-color-button
 {
   0%
   {
-    background: #FF7200;
+    background: #FF6060;
     opacity: 0;
   }
-  10%
+  25%
   {
     opacity: 1;
   }
   100%
   {
-    background: #FF7200;
+    background: #FF6060;
     opacity: 1;
   }
 }
 
-@keyframes orange-shine
+@keyframes red-shine
 {
   0%
   {
-    box-shadow: 0 0 4px 1px #FF7200;
+    box-shadow: 0 0 4px 1px #F48686;
+    opacity: 1;
+  }
+  60%
+  {
+    box-shadow: 0 0 4px 1px #F48686;
     opacity: 1;
   }
   100%
   {
-    box-shadow: 0 0 8px 4px #FF7200;
+    box-shadow: 0 0 10px 5px #FF4242;
     opacity: 1;
   }
 }
+
+@keyframes green-shine
+{
+  0%
+  {
+    box-shadow: 0 0 4px 1px #7DF74C;
+  }
+  60%
+  {
+    box-shadow: 0 0 4px 1px #7DF74C;
+  }
+  100%
+  {
+    box-shadow: 0 0 10px 5px #48D310;
+  }
+}
+
+
+.navbar-inner
+{
+  padding-top: 25px;
+}
+
+.nav
+{
+  height: 65px;
+}
+
 
 .rotated
 {
@@ -271,9 +374,14 @@ ul
   transform: rotate(90deg);
 }
 
-#login-title-onv2
+#login-title-on
 {
   width: 132px;
+  display: inline-block;
+}
+
+#on-button-encloser
+{
   display: inline-block;
 }
 
@@ -283,6 +391,27 @@ ul
   margin: 2% auto 0 auto;
 }
 
+#panel-login
+{
+  padding: 40px 0 5px 0;
+  margin-top: 50px;
+  width: 100%;
+  box-shadow: 0 0 12px 6px #6C6D70;
+  border-style: solid none solid none;
+  border-color: #333333;
+  border-width: 2px;
+  background: asset-url("panel.png", image) repeat;
+  img
+  {
+    margin-left: 2.5%;
+  }
+}
+
+.alert-error
+{
+  text-align: center;
+  display: none;
+}
 
 .friends-list
 {
@@ -403,7 +532,7 @@ input.file
 
 #login-form
 {
-  width: 30%;
+  width: 400px;
   margin: 0 auto;
   display: block;
   input
@@ -421,6 +550,11 @@ input.file
   {
     margin: 5% auto 0 40%;
     width: 20%;
+  }
+  & div div
+  {
+    margin-left: 25px;
+    float: left;
   }
 }
 
@@ -456,3 +590,27 @@ input.file
   }
 }
 
+.bulb
+{
+  background: asset-url("bulbs_sprite.png", image);
+  width: 30px;
+  height: 30px;
+}
+
+.green-bulb
+{
+  @extend .bulb;
+  background-position: 0 0;
+}
+
+.red-bulb
+{
+  @extend .bulb;
+  background-position: 0 -30px;
+}
+
+.off-bulb
+{
+  @extend .bulb;
+  background-position: 0 30px;
+}

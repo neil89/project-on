@@ -19,6 +19,14 @@ console.log("Logueado en profile? -> " + loggedIn);
         return App.Person.find(personId);
         //return App.Person.find(personId).get('profiles');
       }
+    },
+
+    events:
+    {
+      goToLogin: function()
+      {
+        this.transitionTo('login');
+      }
     }
   }
 );
