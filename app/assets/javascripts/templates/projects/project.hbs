@@ -12,4 +12,21 @@
 
 <h1>{{title}}</h1>
 
-<h4 class="block-element">Proyecto creado por {{creator.name}} con descripcion {{description}}</h4>
+{{debugger}}
+{{log record}}
+
+<!--
+  <h4 class="block-element">Proyecto creado por {{creator.name}}</h4>
+-->
+
+<section id="personal-info-section" class="frame-box span8">
+  <div class="info-tag-title">Creado por</div>
+  <div class="info-tag">{{creator.name}}</div>
+
+  <div class="info-tag-title">Colaboradores</div>
+  <ul>
+    {{#each cw in model.coworker}}
+      <li class="profiles-list"><i class="icon-screenshot list-bullets"></i> {{cw.name}}</li>
+    {{/each}}
+  </ul>
+</section>

@@ -15,10 +15,24 @@ App.ProjectsNewController = Ember.ObjectController.extend
       var pDescription =  this.get('description');
 
       var personId = this.get('controllers.app.personId');
-      var person = App.Person.find(personId);
+      //var person = App.Person.find(personId);
+
+var person = App.Person.find(2);
+var pj = App.Project.find(18);
 
       this.transaction = this.get('store').transaction();
 
+var newProjectMember = this.transaction.createRecord
+(
+  App.ProjectTeam,
+  {
+    coworker: person,
+    project:  pj
+  }
+);
+this.set('model', newProjectMember);
+
+/*
       var newProject = this.transaction.createRecord
       (
         App.Project,
@@ -30,8 +44,10 @@ App.ProjectsNewController = Ember.ObjectController.extend
           creator: person
         }
       );
+*/
 
-      this.set('model', newProject);
+      //this.set('model', newProject);
+
 
 /*
       var coworkersArray = [];

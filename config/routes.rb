@@ -1,6 +1,7 @@
 ProjectOn::Application.routes.draw do
   resources :people
   resources :projects
+  resources :project_teams
   resources :profiles
   root :to => 'application#index'
   get '/*path' => 'application#index'
