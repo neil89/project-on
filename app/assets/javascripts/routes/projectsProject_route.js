@@ -15,6 +15,14 @@ console.log("Logueado en projects.project? -> " + loggedIn);
       {
         return App.Project.find(params.project_id);
       }
+    },
+
+    events:
+    {
+      goToProjectsIndex: function()
+      {
+        this.transitionTo('projects.index');
+      }
     }
   }
 );

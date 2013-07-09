@@ -7,9 +7,7 @@ App.Adapter.map
   }
 );
 
-//DS.JoinModel = DS.Model.extend();
 
-//App.ProjectTeam = DS.JoinModel.extend
 App.ProjectTeam = DS.Model.extend
 (
   {

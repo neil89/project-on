@@ -7,7 +7,7 @@
     {{#each}}
       <li class="friends-list">
         <div>
-          {{#linkTo 'app.profile'}}
+          {{#linkTo 'app.person' this}}
             <img src="{{unbound iconUrl}}">
             {{name}}
           {{/linkTo}}

@@ -16,5 +16,5 @@ App = Ember.Application.create
   }
 );
 
-Ember.LOG_BINDINGS = true;
-Ember.keys(Ember.TEMPLATES);
+//Ember.LOG_BINDINGS = true;
+//Ember.keys(Ember.TEMPLATES);

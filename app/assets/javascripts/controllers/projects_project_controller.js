@@ -1,13 +1,35 @@
 App.ProjectsProjectController = Ember.ObjectController.extend
 (
   {
-    cwList: function()
+    isEditing: false,
+
+    editProject: function()
     {
-      console.log("Controladodr ProjectsProject");
+      this.set('isEditing', true);
+    },
 
-      var cw = this.get('model.coworkers');
+    updateProject: function()
+    {
+      this.set('isEditing', false);
 
-      return "coworkersss";
+      var editProject = this.get('model');
+      var transaction = editProject.get('store').transaction();
+      transaction.add(editProject);
+      this.transaction = transaction;
+
+      this.transaction.commit();
+      this.transaction = null;
+    },
+
+    destroyProject: function()
+    {
+      if (window.confirm("¿Estás seguro de que quieres eliminar este proyecto?"))
+      {
+        this.get('model').deleteRecord();
+        this.get('store').commit();
+
+        this.send('goToProjectsIndex');
+      }
     }
   }
 );

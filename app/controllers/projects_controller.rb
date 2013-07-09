@@ -23,4 +23,21 @@ class ProjectsController < ApplicationController
 
     p.reload
   end
+
+  # PUT /projects/1.json
+  def update
+    p = Project.find(params[:id])
+    if p.update_attributes(params[:project])
+      render json: p, status: :ok
+    else
+      render json: p.errors, status: :unprocessable_entity
+    end
+  end
+
+  # DELETE /contacts/1.json
+  def destroy
+    p = Project.find(params[:id])
+    p.destroy
+    render json: nil, status: :ok
+  end
 end

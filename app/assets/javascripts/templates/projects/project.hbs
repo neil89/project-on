@@ -10,26 +10,93 @@
   <li class="active">{{title}}</li>
 </ul>
 
-<h1>{{title}}</h1>
+
+<div id="project-title-section">
+  {{#if isEditing}}
+    {{view App.ProjectInputView valueBinding="title" class="input-h1"}}
+  {{else}}
+    <h1>{{title}}</h1>
+  {{/if}}
+</div>
+
+<h4 class="block-element">Datos del proyecto <i class="icon-pencil edit-project-icon icon-title" title="Haz clic para editar el proyecto" {{action "editProject" on="click"}}></i></h4>
+
+<section id="project-info-section" class="frame-box span6">
+  <div class="info-tag-title">Fecha de comienzo</div>
+  {{#if isEditing}}
+    {{view App.ProjectInputView valueBinding="startingDate"}}
+  {{else}}
+    <div class="info-tag">{{startingDate}}</div>
+  {{/if}}
+
+  <div class="info-tag-title">Fecha de finalización</div>
+  {{#if isEditing}}
+    {{view App.ProjectInputView valueBinding="endingDate"}}
+  {{else}}
+    <div class="info-tag">
+      {{#if endingDate}}
+        {{endingDate}}
+      {{else}}
+        Sin determinar
+      {{/if}}
+    </div>
+  {{/if}}
+
+  <div class="info-tag-title">Descripción</div>
+  {{#if isEditing}}
+    {{view App.ProjectInputView valueBinding="description"}}
+  {{else}}
+    <div class="info-tag">{{description}}</div>
+  {{/if}}
+</section>
 
 
-
-<!--
-  <h4 class="block-element">Proyecto creado por {{creator.name}}</h4>
--->
-
-<section id="personal-info-section" class="frame-box span8">
+<section id="project-team-section" class="frame-box span6">
   <div class="info-tag-title">Creado por</div>
-  <div class="info-tag">{{creator.name}}</div>
-
-{{debugger}}
-{{log model}}
-{{log model.coworker}}
-
+  <div>
+    <ul>
+      <li class="project-profile-coworkers-list">
+        <div>
+          {{#linkTo 'app.profile'}}
+            <img src="{{unbound creator.iconUrl}}">
+            {{creator.name}}
+          {{/linkTo}}
+        </div>
+      </li>
+    </ul>
+  </div>
+  
   <div class="info-tag-title">Colaboradores</div>
   <ul>
-    {{#each cw in model.coworkers}}
-      <li class="profiles-list"><i class="icon-screenshot list-bullets"></i> {{cw.name}} {{cwList}}</li>
+    {{#each cw in coworkers}}
+      <li class="project-profile-coworkers-list">
+        <div>
+          {{#linkTo 'app.person' cw.coworker}}
+            <img src="{{unbound cw.coworker.iconUrl}}">
+            {{cw.coworker.name}}
+          {{/linkTo}}
+        </div>
+      </li>
+    {{else}}
+      Aún no hay colaboradores en este proyecto
     {{/each}}
   </ul>
+</section>
+
+<section id="project-profile-buttons" class="span6">
+  {{#if isEditing}}
+    <button {{action "updateProject"}} class="btn btn-success">
+      Guardar
+    </button>
+  {{else}}
+    <button {{action "editProject"}} class="btn btn-warning">
+      Editar
+    </button>
+  {{/if}}
+
+  {{#unless isEditing}}
+    <button {{action "destroyProject"}} class="btn btn-danger">
+      Eliminar
+    </button>
+  {{/unless}}
 </section>

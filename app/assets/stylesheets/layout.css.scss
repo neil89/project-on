@@ -432,6 +432,7 @@ ul
 
 .info-tag-title
 {
+  clear: both;
   font-weight: bold;
   margin-left: 10px;
   padding-top: 5px;
@@ -466,6 +467,28 @@ ul
   opacity: 0;
 }
 
+.edit-project-icon
+{
+  opacity: 0.6;
+  cursor: pointer;
+  &:hover
+  {
+    opacity: 1;
+  }
+}
+
+#project-title-section input[type="text"]
+{
+  color: #333333;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 38.5px;
+  line-height: 40px;
+  padding: 8px;
+  height: 45px;
+  width: 300px;
+  border-radius: 10px;
+}
+
 #profile-image-section
 {
   float: right;
@@ -479,6 +502,11 @@ ul
     margin: 0 auto;
     display: block;
   }
+}
+
+#project-team-section
+{
+  float: right;
 }
 
 
@@ -613,4 +641,37 @@ input.file
 {
   @extend .bulb;
   background-position: 0 30px;
+}
+
+.project-profile-image
+{
+  width: 60px;
+  height: 60px;
+}
+
+
+.project-profile-coworkers-list
+{
+  display: inline;
+  div
+  {
+    width: 75px;
+    padding: 10px 15px 5px 25px;
+    text-align: center;
+    float: left;
+    img
+    {
+      width: 75px;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+#project-profile-buttons
+{
+  text-align: center;
+  button
+  {
+    margin: 0 10%;
+  }
 }

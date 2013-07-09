@@ -1,0 +1,57 @@
+<h1>Perfil</h1>
+
+<h4 class="block-element">Información personal</h4>
+
+<section id="profile-image-section" class="frame-box">
+    <div class="info-tag-title">Foto de perfil</div>
+    <img src="{{unbound iconUrl}}">
+    <input type="file" class="file" title="Haz clic para cambiar tu foto de perfil"/>
+</section>
+
+<section id="personal-info-section" class="frame-box span8">
+  {{#with model}}
+    <div class="info-tag-title">Nombre</div>
+    <div class="info-tag">{{name}}</div>
+
+    <div class="info-tag-title">Lugar</div>
+    <div class="info-tag">{{place}}</div>
+
+    <div class="info-tag-title">Email</div>
+    <div class="info-tag">{{email}}</div>
+
+    <div class="info-tag-title">Formación académica</div>
+    <div class="info-tag">{{academic}}</div>
+
+    <div class="info-tag-title">Experiencia profesional</div>
+    <div class="info-tag">{{professional}}</div>
+
+    <div class="info-tag-title">Conocimientos y aptitudes</div>
+    <div>{{beautifyKnowledge knowledge}}</div>  
+  {{/with}}
+    <div class="info-tag-title">Perfiles</div>
+    <ul>
+      {{#each pf in model.profiles}}
+        <li class="profiles-list"><i class="icon-screenshot list-bullets"></i> {{pf.name}}</li>
+      {{/each}}
+    </ul>
+  
+</section>
+
+<h4 class="block-element">
+  {{#linkTo 'projects.index'}}
+    Proyectos <i class="icon-chevron-right icon-title"></i>
+  {{/linkTo}}
+</h4>
+
+{{debug}}
+{{log model}}
+
+<section id="projects-info-section" class="frame-box span8">
+  {{#with model}}
+    <div class="info-tag-title">Creados por mi</div>
+    <div class="info-tag">{{pluralizeProjects projectsCreated}}</div>
+
+    <div class="info-tag-title">En los que participo</div>
+    <div class="info-tag">{{pluralizeProjects projects}}</div>
+  {{/with}}
+</section>
