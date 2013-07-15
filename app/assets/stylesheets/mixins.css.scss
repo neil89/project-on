@@ -1,0 +1,55 @@
+@mixin box-shadow-vendors($x, $y, $blur, $spread, $color)
+{
+  -o-box-shadow:      $x $y $blur $spread $color;
+  -moz-box-shadow:    $x $y $blur $spread $color;
+  -webkit-box-shadow: $x $y $blur $spread $color;
+  box-shadow:         $x $y $blur $spread $color;
+}
+
+@mixin animation-name-vendors($name)
+{
+  -o-animation-name:      $name;
+  -moz-animation-name:    $name;
+  -webkit-animation-name: $name;
+  animation-name:         $name;
+}
+
+@mixin animation-duration-vendors($duration)
+{
+  -o-animation-duration:      $duration;
+  -moz-animation-duration:    $duration;
+  -webkit-animation-duration: $duration;
+  animation-duration:         $duration;
+}
+
+@mixin animation-timing-function-vendors($timing-function)
+{
+  -o-animation-timing-function:      $timing-function;
+  -moz-animation-timing-function:    $timing-function;
+  -webkit-animation-timing-function: $timing-function;
+  animation-timing-function:         $timing-function;
+}
+
+@mixin animation-delay-vendors($delay)
+{
+  -o-animation-delay:      $delay;
+  -moz-animation-delay:    $delay;
+  -webkit-animation-delay: $delay;
+  animation-delay:         $delay;
+}
+
+@mixin transform-origin-vendors($x, $y, $z)
+{
+  -webkit-transform-origin: $x $y $z;
+  -moz-transform-origin:    $x $y $z;
+  -o-transform-origin:      $x $y $z;
+  transform-origin:         $x $y $z;  
+}
+
+@mixin transform-rotate-vendors($angle)
+{
+  -webkit-transform: rotate($angle);
+  -moz-transform:    rotate($angle);
+  -o-transform:      rotate($angle);
+  transform:         rotate($angle);
+}

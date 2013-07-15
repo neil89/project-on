@@ -21,9 +21,11 @@
   {{/each}}
 </ul>
 
-{{#linkTo 'projects.new'}}
-  <button class='btn btn-primary'><i class="icon-plus button-icon"></i> Crear proyecto</button>
-{{/linkTo}}
+<div id="create-project-button-section">
+  {{#linkTo 'projects.new'}}
+    <button class='btn btn-primary'><i class="icon-plus icon-white list-bullets"></i> Crear proyecto</button>
+  {{/linkTo}}
+</div>
 
 <h4 class="block-element">En los que participo</h4>
 <ul>

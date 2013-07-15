@@ -1,1 +1,79 @@
-<h1>PLANTILLA PROJECT DENTRO DE CARPETA PERSONPROJECTS</h1>
+<ul class="breadcrumb">
+  {{#linkTo "app.profile" tagName="li"}}
+    <a {{bindAttr href="view.href"}}>Perfil</a>
+    <span class="divider">/</span>
+  {{/linkTo}}
+  {{#linkTo "projects.index" tagName="li"}}
+    <a {{bindAttr href="view.href"}}>Mis proyectos</a>
+    <span class="divider">/</span>
+  {{/linkTo}}
+  <li class="active">{{title}}</li>
+</ul>
+
+
+<div id="project-title-section">
+  {{#if isEditing}}
+    {{view App.ProjectInputView valueBinding="title" class="input-h1"}}
+  {{else}}
+    <h1>{{title}}</h1>
+  {{/if}}
+</div>
+
+<h4 class="block-element">Datos del proyecto</h4>
+
+<section id="project-info-section" class="frame-box span6">
+  <div class="info-tag-title">Fecha de comienzo</div>
+  <div class="info-tag">{{startingDate}}</div>
+
+  <div class="info-tag-title">Fecha de finalización</div>
+  <div class="info-tag">
+    {{#if endingDate}}
+      {{endingDate}}
+    {{else}}
+      Sin determinar
+    {{/if}}
+  </div>
+
+  <div class="info-tag-title">Descripción</div>
+  <div class="info-tag">
+    {{#if description}}
+      {{description}}
+    {{else}}
+      Sin descripción
+    {{/if}}
+  </div>
+</section>
+
+
+<section id="project-team-section" class="frame-box span6">
+  <div class="info-tag-title">Creado por</div>
+  <div>
+    <ul>
+      <li class="project-profile-coworkers-list">
+        <div>
+          {{#linkTo 'app.profile'}}
+            <img src="{{unbound creator.iconUrl}}">
+            {{creator.name}}
+          {{/linkTo}}
+        </div>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="info-tag-title">Colaboradores</div>
+  <ul>
+    {{#each cw in coworkers}}
+      <li class="project-profile-coworkers-list">
+        <div>
+          {{#linkTo 'person.profile' cw.coworker}}
+            <img src="{{unbound cw.coworker.iconUrl}}">
+            {{cw.coworker.name}}
+          {{/linkTo}}
+        </div>
+      </li>
+    {{else}}
+      Aún no hay colaboradores en este proyecto
+    {{/each}}
+  </ul>
+</section>
+

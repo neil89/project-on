@@ -22,12 +22,13 @@ App.Router.map
         this.resource('people', { path: '/people' }, function()
           {                                                           // people
             this.resource('person', { path: '/:person_id' }, function()
-              {                                                       // person
+              {                               // person                        
+                this.route('profile');
                 this.resource('personProjects', { path: '/projects' }, function()
-                  {                                                   // personProjects
-                    this.route('project', { path: '/:project_id' });  // personProjects.project
-                  }
-                );
+                {
+                  this.route('index', { path: '/' });
+                  this.route('project', { path: '/:project_id' });
+                });
               }
             );
           }

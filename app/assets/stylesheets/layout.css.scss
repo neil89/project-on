@@ -30,10 +30,10 @@ ul
   border: 3px solid #333333;
   border-radius: 36px;
   background: #333333;
-  animation-name: setup-outer-circle;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-in;
-  animation-delay: 1s;
+  @include animation-name-vendors(setup-outer-circle);
+  @include animation-duration-vendors(1.5s);
+  @include animation-timing-function-vendors(ease-in);
+  @include animation-delay-vendors(1s);
 }
 
 #circle-hole
@@ -43,10 +43,10 @@ ul
   border: 3px solid white;
   background: white;
   border-radius: 17px;
-  animation-name: setup-inner-circle;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-in;
-  animation-delay: 1s;
+  @include animation-name-vendors(setup-inner-circle);
+  @include animation-duration-vendors(1.5s);
+  @include animation-timing-function-vendors(ease-in);
+  @include animation-delay-vendors(1s);
 }
 
 #circle-hole-color
@@ -58,10 +58,16 @@ ul
   border-radius: 45px;
   position: absolute;
   top: 22px;
-  left: 61px; 
-  animation: red-color-button 2s ease-in-out 6s,
-    red-shine 0.5s ease-in-out 8s infinite alternate;
+  left: 61px;
   opacity: 0;
+  -webkit-animation: red-color-button 2s ease-in-out 6s,
+  red-shine 0.5s ease-in-out 8s infinite alternate;
+  -moz-animation: red-color-button 2s ease-in-out 6s,
+  red-shine 0.5s ease-in-out 8s infinite alternate;
+  -o-animation: red-color-button 2s ease-in-out 6s,
+  red-shine 0.5s ease-in-out 8s infinite alternate;
+  animation: red-color-button 2s ease-in-out 6s,
+  red-shine 0.5s ease-in-out 8s infinite alternate;
 }
 
 #dash
@@ -70,10 +76,10 @@ ul
   height: 12px;
     //border: 2px solid #333333;
   background: #333333;
-  animation-name: setup-dash;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 1s;
+  @include animation-name-vendors(setup-dash);
+  @include animation-duration-vendors(2s);
+  @include animation-timing-function-vendors(ease-in-out);
+  @include animation-delay-vendors(1s);
 }
 
 #encloser
@@ -81,10 +87,10 @@ ul
   margin-left: 4px;
     //border: green solid 1px;
   height: 84px;
-  animation-name: rotate-button-on;
-  animation-duration: 2.5s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 3.5s;
+  @include animation-name-vendors(rotate-button-on);
+  @include animation-duration-vendors(2.5s);
+  @include animation-timing-function-vendors(ease-in-out);
+  @include animation-delay-vendors(3.5s);
 }
 
 #encloser-dash
@@ -96,10 +102,10 @@ ul
   float: left;
   position: relative;
   z-index: 3;
-  animation-name: setup-encloser-dash;
-  animation-duration: 2s;
-  animation-timing-function: ease-in;
-  animation-delay: 1s;
+  @include animation-name-vendors(setup-encloser-dash);
+  @include animation-duration-vendors(2s);
+  @include animation-timing-function-vendors(ease-in);
+  @include animation-delay-vendors(1s);
 }
 
 #encloser-circle
@@ -108,10 +114,10 @@ ul
     //border: blue solid 1px;
   margin-bottom: -4px;
   height: 83px;
-  animation-name: setup-encloser-outer-circle;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-in;
-  animation-delay: 1s;
+  @include animation-name-vendors(setup-encloser-outer-circle);
+  @include animation-duration-vendors(1.5s);
+  @include animation-timing-function-vendors(ease-in);
+  @include animation-delay-vendors(1s);
 }
 
 #encloser-circle-hole
@@ -120,10 +126,10 @@ ul
   margin-top: -62px;
   float: left;
     //border: 1px solid purple;
-  animation-name: setup-encloser-inner-circle;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-in;
-  animation-delay: 1s;
+  @include animation-name-vendors(setup-encloser-inner-circle);
+  @include animation-duration-vendors(1.5s);
+  @include animation-timing-function-vendors(ease-in);
+  @include animation-delay-vendors(1s);
 }
 
 
@@ -179,14 +185,23 @@ ul
   position: absolute;
   top: 22px;
   left: 61px; 
+  -webkit-animation: green-shine 0.5s ease-in-out infinite alternate;
+  -moz-animation: green-shine 0.5s ease-in-out infinite alternate;
+  -o-animation: green-shine 0.5s ease-in-out infinite alternate;
   animation: green-shine 0.5s ease-in-out infinite alternate;
-  &:hover
+  &:hover 
   {
     border: 2px solid #FF3232;
     background: #FF6060;
+    -webkit-animation: red-shine 0.5s ease-in-out infinite alternate;
+    -moz-animation: red-shine 0.5s ease-in-out infinite alternate;
+    -o-animation: red-shine 0.5s ease-in-out infinite alternate;
     animation: red-shine 0.5s ease-in-out infinite alternate;
   }
 }
+
+
+
 
 #dash-final
 {
@@ -196,165 +211,6 @@ ul
 }
 
 
-@keyframes setup-outer-circle
-{
-  0%
-  {
-    height: 74px;
-    width: 68px;
-    border-radius: 36px;
-  }
-  100%
-  {
-    height: 72px;
-    width: 72px;
-    border-radius: 72px;
-  }
-}
-
-@keyframes setup-encloser-outer-circle
-{
-  0%
-  {
-    margin-bottom: -4px;
-    padding-top: 0;
-    height: 83px;
-  }
-  100%
-  {
-    padding-top: 7px;
-    margin-bottom: -6px;
-    height: 78px;
-  }
-}
-
-@keyframes setup-inner-circle
-{
-  0%
-  {
-    height: 44px;
-    width: 28px;
-    border-radius: 17px;
-  }
-  100%
-  {
-    height: 42px;
-    width: 42px;
-    border-radius: 42px;
-  }
-}
-
-@keyframes setup-encloser-inner-circle
-{
-  0%
-  {
-    margin-left: 67px;
-    margin-top: -62px;
-  }
-  100%
-  {
-    margin-left: 62px;
-    margin-top: -56.5px;
-  }
-}
-
-@keyframes setup-dash
-{
-  0%
-  {
-    width: 33px;
-  }
-  100%
-  {
-    width: 38px;
-  }
-}
-
-@keyframes setup-encloser-dash
-{
-  0%
-  {
-    margin-top: 32px;
-    margin-left: 0;
-  }
-  50%
-  {
-    margin-top: 40.5px;
-    margin-left: 0;
-  }
-  100%
-  {
-    margin-top: 40.5px;
-    margin-left: 36px;
-  }
-}
-
-@keyframes rotate-button-on
-{
-  0%
-  {
-    transform-origin: 87px 40px 81px 44px 0;
-    transform: rotate(0deg);
-  }
-  100%
-  {
-    transform-origin: 81px 44px 0;
-    transform: rotate(90deg);
-  }
-}
-
-@keyframes red-color-button
-{
-  0%
-  {
-    background: #FF6060;
-    opacity: 0;
-  }
-  25%
-  {
-    opacity: 1;
-  }
-  100%
-  {
-    background: #FF6060;
-    opacity: 1;
-  }
-}
-
-@keyframes red-shine
-{
-  0%
-  {
-    box-shadow: 0 0 4px 1px #F48686;
-    opacity: 1;
-  }
-  60%
-  {
-    box-shadow: 0 0 4px 1px #F48686;
-    opacity: 1;
-  }
-  100%
-  {
-    box-shadow: 0 0 10px 5px #FF4242;
-    opacity: 1;
-  }
-}
-
-@keyframes green-shine
-{
-  0%
-  {
-    box-shadow: 0 0 4px 1px #7DF74C;
-  }
-  60%
-  {
-    box-shadow: 0 0 4px 1px #7DF74C;
-  }
-  100%
-  {
-    box-shadow: 0 0 10px 5px #48D310;
-  }
-}
 
 
 .navbar-inner
@@ -370,8 +226,8 @@ ul
 
 .rotated
 {
-  transform-origin: 81px 44px 0;
-  transform: rotate(90deg);
+  @include transform-origin-vendors(81px, 44px, 0);
+  @include transform-rotate-vendors(90deg);
 }
 
 #login-title-on
@@ -396,7 +252,7 @@ ul
   padding: 40px 0 5px 0;
   margin-top: 50px;
   width: 100%;
-  box-shadow: 0 0 12px 6px #6C6D70;
+  @include box-shadow-vendors(0, 0, 10px, 4px, #6C6D70);
   border-style: solid none solid none;
   border-color: #333333;
   border-width: 2px;
@@ -445,7 +301,8 @@ ul
 
 .frame-box
 {
-  box-shadow: 0px 0px 8px 1px #383F56;
+  @include box-shadow-vendors(0, 0, 8px, 1px, #383F56);
+  border-radius: 5px;
   margin-bottom: 2%;
   padding: 0.5% 0.5% 1% 0.5%;
 }
@@ -674,4 +531,9 @@ input.file
   {
     margin: 0 10%;
   }
+}
+
+#create-project-button-section
+{
+  padding: 20px 0;
 }

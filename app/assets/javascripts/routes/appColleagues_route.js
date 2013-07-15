@@ -1,11 +1,11 @@
-App.AppFriendsRoute = Ember.Route.extend
+App.AppColleaguesRoute = Ember.Route.extend
 (
   {
     model: function()
     {
       var loggedIn = this.controllerFor('login').get('loggedInCheck');
 
-console.log("Logueado en friends? -> " + loggedIn);
+console.log("Logueado en colleagues? -> " + loggedIn);
 
       if(!loggedIn)
       {
@@ -15,7 +15,7 @@ console.log("Logueado en friends? -> " + loggedIn);
       {
         var personId = this.controllerFor('app').get('personId');
 
-        return App.Person.find(personId).get('friends');
+        return App.Person.find();
       }
     }
   }

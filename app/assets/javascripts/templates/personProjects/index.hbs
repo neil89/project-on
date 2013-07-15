@@ -1,3 +1,13 @@
-<h1>PLANTILLA INDEX DENTRO DE CARPETA PERSONPROJECTS</h1>
+<h1>Proyectos:</h1>
 
-{{outlet}}
+{{debug}}
+{{log model}}
+
+
+<ul>
+    {{#each pj in model}}
+        <li>{{pj.title}}</li>
+    {{else}}
+        <li>Ninguno</li>
+    {{/each}}
+</ul>

@@ -35,6 +35,21 @@ Ember.Handlebars.helper
 
 Ember.Handlebars.helper
 (
+  'pluralizeColleagues', function(list)
+  {
+    var arrayL = arrayLength(list);
+
+    var str = arrayL + " colega";
+
+    if (arrayL != 1)
+      str += "s";
+
+    return str;
+  }
+);
+
+Ember.Handlebars.helper
+(
   'pluralizeProjects', function(list)
   {
     var arrayL = arrayLength(list);
